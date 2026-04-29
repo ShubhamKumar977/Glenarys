@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glenary's — Darjeeling</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">G</div>
+      <div class="loader-text">Glenary's</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-logo">Glenary's</div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Visit Us</a></li>
+    </ul>
+    <div class="nav-toggle" id="navToggle">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tagline">Est. 1935 · Darjeeling</p>
+      <h1 class="hero-title">
+        <span class="word">Where</span>
+        <span class="word">Every</span>
+        <span class="word">Bite</span>
+        <span class="word">Tells</span>
+        <span class="word">a</span>
+        <span class="word">Story</span>
+      </h1>
+      <p class="hero-sub">Bakery · Restaurant · Rooftop Bar · Darjeeling, India</p>
+      <div class="hero-btns">
+        <a href="#menu" class="btn btn-primary">Explore Menu</a>
+        <a href="#about" class="btn btn-outline">Our Story</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Floating Cards Strip -->
+  <section id="highlights">
+    <div class="highlight-card" data-tilt>
+      <div class="hc-icon">🍞</div>
+      <h3>Artisan Bakery</h3>
+      <p>Wood-fired breads, croissants & pastries baked fresh every morning since 1935.</p>
+    </div>
+    <div class="highlight-card" data-tilt>
+      <div class="hc-icon">🍽️</div>
+      <h3>Restaurant</h3>
+      <p>Continental, Indian & Tibetan cuisine with sweeping Himalayan views.</p>
+    </div>
+    <div class="highlight-card" data-tilt>
+      <div class="hc-icon">🍷</div>
+      <h3>Rooftop Bar</h3>
+      <p>Sip cocktails under the stars with Kanchenjunga as your backdrop.</p>
+    </div>
+    <div class="highlight-card" data-tilt>
+      <div class="hc-icon">☕</div>
+      <h3>Darjeeling Tea</h3>
+      <p>First flush, second flush — the finest teas from the hills, served right.</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="about-scene">
+      <div class="about-3d-box" id="about3dBox">
+        <div class="box-face front"></div>
+        <div class="box-face back"></div>
+        <div class="box-face left"></div>
+        <div class="box-face right"></div>
+        <div class="box-face top"></div>
+        <div class="box-face bottom"></div>
+      </div>
+    </div>
+    <div class="about-content">
+      <span class="section-label">Our Story</span>
+      <h2>A Legacy Since <em>1935</em></h2>
+      <p>
+        Nestled on Nehru Road — the heart of Darjeeling — Glenary's has been a beloved institution for nearly a century. Founded during the British Raj, it began as a modest bakery and grew into one of the most iconic dining destinations in the Eastern Himalayas.
+      </p>
+      <p>
+        The aroma of freshly baked bread drifting down The Mall, the warmth of a wood-panelled dining room, and the sight of snow-capped peaks through the windows — this is Glenary's. A place where time slows down and every meal becomes a memory.
+      </p>
+      <div class="about-stats">
+        <div class="stat"><span class="stat-num" data-target="89">0</span><span>Years of Legacy</span></div>
+        <div class="stat"><span class="stat-num" data-target="120">0</span><span>Menu Items</span></div>
+        <div class="stat"><span class="stat-num" data-target="500">0</span><span>Daily Guests</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu">
+    <div class="section-header">
+      <span class="section-label">What We Serve</span>
+      <h2>Our Menu</h2>
+    </div>
+    <div class="menu-tabs">
+      <button class="tab-btn active" data-tab="bakery">Bakery</button>
+      <button class="tab-btn" data-tab="mains">Mains</button>
+      <button class="tab-btn" data-tab="drinks">Drinks</button>
+      <button class="tab-btn" data-tab="desserts">Desserts</button>
+    </div>
+    <div class="menu-grid" id="menuGrid"></div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <div class="section-header">
+      <span class="section-label">Atmosphere</span>
+      <h2>A Glimpse Inside</h2>
+    </div>
+    <div class="gallery-track" id="galleryTrack">
+
+      <div class="gallery-item" style="--i:0">
+        <div class="gallery-img-wrap">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Glenary%27s%2C_Darjeeling.jpg/960px-Glenary%27s%2C_Darjeeling.jpg"
+            alt="Glenary's Bakery and Restaurant, Darjeeling"
+            loading="lazy" onerror="imgFallback(this)"
+          />
+          <div class="gallery-overlay"></div>
+        </div>
+        <div class="gallery-caption"><span>Glenary's</span>The iconic facade on Nehru Road</div>
+      </div>
+
+      <div class="gallery-item" style="--i:1">
+        <div class="gallery-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=900&q=80"
+            alt="Himalayan mountain sunrise"
+            loading="lazy" onerror="imgFallback(this)"
+          />
+          <div class="gallery-overlay"></div>
+        </div>
+        <div class="gallery-caption"><span>The View</span>Kanchenjunga at first light</div>
+      </div>
+
+      <div class="gallery-item" style="--i:2">
+        <div class="gallery-img-wrap">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Darjeeling%2C_India%2C_Tea_plantations_on_hills.jpg/960px-Darjeeling%2C_India%2C_Tea_plantations_on_hills.jpg"
+            alt="Darjeeling tea plantations on the hills"
+            loading="lazy" onerror="imgFallback(this)"
+          />
+          <div class="gallery-overlay"></div>
+        </div>
+        <div class="gallery-caption"><span>Darjeeling Tea</span>From the gardens to your cup</div>
+      </div>
+
+      <div class="gallery-item" style="--i:3">
+        <div class="gallery-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=900&q=80"
+            alt="Freshly baked artisan bread"
+            loading="lazy" onerror="imgFallback(this)"
+          />
+          <div class="gallery-overlay"></div>
+        </div>
+        <div class="gallery-caption"><span>The Bakery</span>Wood-fired breads since 1935</div>
+      </div>
+
+      <div class="gallery-item" style="--i:4">
+        <div class="gallery-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80"
+            alt="Fine dining restaurant interior"
+            loading="lazy" onerror="imgFallback(this)"
+          />
+          <div class="gallery-overlay"></div>
+        </div>
+        <div class="gallery-caption"><span>The Restaurant</span>Continental dining with a view</div>
+      </div>
+
+      <div class="gallery-item" style="--i:5">
+        <div class="gallery-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=900&q=80"
+            alt="Misty Himalayan mountain landscape"
+            loading="lazy" onerror="imgFallback(this)"
+          />
+          <div class="gallery-overlay"></div>
+        </div>
+        <div class="gallery-caption"><span>The Hills</span>Darjeeling in the clouds</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <div class="section-header">
+      <span class="section-label">Guest Words</span>
+      <h2>What People Say</h2>
+    </div>
+    <div class="testimonial-carousel" id="testimonialCarousel">
+      <div class="testimonial active">
+        <p>"The croissants at Glenary's are the best I've had outside of Paris. The view of Kanchenjunga while sipping Darjeeling tea is simply unreal."</p>
+        <cite>— Priya M., Mumbai</cite>
+      </div>
+      <div class="testimonial">
+        <p>"A Darjeeling trip is incomplete without breakfast at Glenary's. The wood-panelled interiors, the smell of fresh bread — pure nostalgia."</p>
+        <cite>— Rahul S., Kolkata</cite>
+      </div>
+      <div class="testimonial">
+        <p>"We visited for dinner and stayed for hours. The rooftop bar with mountain views and excellent cocktails — absolutely magical."</p>
+        <cite>— Sophie L., London</cite>
+      </div>
+      <div class="testimonial">
+        <p>"Glenary's is an institution. The plum cake, the chicken patties, the Darjeeling tea — every single thing is perfect."</p>
+        <cite>— Arjun K., Delhi</cite>
+      </div>
+    </div>
+    <div class="carousel-dots" id="carouselDots"></div>
+  </section>
+
+  <!-- Contact / Visit -->
+  <section id="contact">
+    <div class="contact-left">
+      <span class="section-label">Find Us</span>
+      <h2>Visit Glenary's</h2>
+      <div class="contact-info">
+        <div class="ci-item">
+          <span class="ci-icon">📍</span>
+          <div>
+            <strong>Address</strong>
+            <p>Nehru Road (The Mall), Darjeeling<br/>West Bengal — 734101, India</p>
+          </div>
+        </div>
+        <div class="ci-item">
+          <span class="ci-icon">🕐</span>
+          <div>
+            <strong>Hours</strong>
+            <p>Bakery: 7:30 AM – 8:00 PM<br/>Restaurant: 8:00 AM – 9:30 PM<br/>Bar: 11:00 AM – 10:00 PM</p>
+          </div>
+        </div>
+        <div class="ci-item">
+          <span class="ci-icon">📞</span>
+          <div>
+            <strong>Phone</strong>
+            <p>+91 354 225 4159</p>
+          </div>
+        </div>
+        <div class="ci-item">
+          <span class="ci-icon">✉️</span>
+          <div>
+            <strong>Email</strong>
+            <p>info@glenarysbakery.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-right">
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3561.123456789!2d88.2627!3d27.0410!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e42b3c3b3b3b3b%3A0x3b3b3b3b3b3b3b3b!2sGlenary&#39;s%2C%20Nehru%20Road%2C%20Darjeeling!5e0!3m2!1sen!2sin!4v1234567890"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" title="Glenary's Location">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">Glenary's</div>
+        <p>A Darjeeling institution since 1935.<br/>Bakery · Restaurant · Rooftop Bar.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Visit Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook" class="social-icon">f</a>
+          <a href="#" aria-label="Instagram" class="social-icon">in</a>
+          <a href="#" aria-label="Twitter" class="social-icon">tw</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Glenary's Darjeeling. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
