@@ -325,34 +325,67 @@ body {
 
 .about-scene {
   display: flex; align-items: center; justify-content: center;
-  perspective: 800px;
-  height: 400px;
+  height: 420px;
 }
 
-.about-3d-box {
-  width: 200px; height: 200px;
-  position: relative;
-  transform-style: preserve-3d;
-  animation: rotateCube 12s linear infinite;
+#aboutSvg {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(201,168,76,0.15);
+  overflow: visible;
 }
 
-.box-face {
-  position: absolute;
-  width: 200px; height: 200px;
-  border: 2px solid var(--gold);
-  opacity: 0.6;
+/* Star twinkle */
+.svg-stars circle {
+  animation: svgTwinkle 3s ease-in-out infinite;
+}
+.svg-stars circle:nth-child(2n)   { animation-delay: 0.8s; animation-duration: 2.5s; }
+.svg-stars circle:nth-child(3n)   { animation-delay: 1.4s; animation-duration: 3.5s; }
+.svg-stars circle:nth-child(4n)   { animation-delay: 0.3s; animation-duration: 2.8s; }
+.svg-stars circle:nth-child(5n)   { animation-delay: 1.9s; animation-duration: 4s; }
+
+@keyframes svgTwinkle {
+  0%,100% { opacity: 0.9; r: 1; }
+  50%      { opacity: 0.2; r: 0.4; }
 }
 
-.box-face.front  { transform: translateZ(100px); background: rgba(201,168,76,0.05); }
-.box-face.back   { transform: rotateY(180deg) translateZ(100px); background: rgba(201,168,76,0.05); }
-.box-face.left   { transform: rotateY(-90deg) translateZ(100px); background: rgba(201,168,76,0.03); }
-.box-face.right  { transform: rotateY(90deg) translateZ(100px); background: rgba(201,168,76,0.03); }
-.box-face.top    { transform: rotateX(90deg) translateZ(100px); background: rgba(201,168,76,0.08); }
-.box-face.bottom { transform: rotateX(-90deg) translateZ(100px); background: rgba(201,168,76,0.02); }
+/* Train chugging across */
+.toy-train {
+  animation: trainRide 12s linear infinite;
+}
 
-@keyframes rotateCube {
-  from { transform: rotateX(15deg) rotateY(0deg); }
-  to   { transform: rotateX(15deg) rotateY(360deg); }
+@keyframes trainRide {
+  0%   { transform: translateX(-220px); }
+  100% { transform: translateX(680px); }
+}
+
+/* Smoke puffs rising from chimney */
+.puff1 {
+  animation: puff1Rise 2s ease-out infinite;
+  transform-origin: 8px 262px;
+}
+.puff2 {
+  animation: puff2Rise 2s ease-out 0.5s infinite;
+  transform-origin: 8px 262px;
+}
+.puff3 {
+  animation: puff3Rise 2s ease-out 1s infinite;
+  transform-origin: 8px 262px;
+}
+
+@keyframes puff1Rise {
+  0%   { transform: translate(8px, 262px) scale(0.5); opacity: 0.6; }
+  100% { transform: translate(-5px, 230px) scale(2.5); opacity: 0; }
+}
+@keyframes puff2Rise {
+  0%   { transform: translate(8px, 262px) scale(0.4); opacity: 0.5; }
+  100% { transform: translate(5px, 220px) scale(2); opacity: 0; }
+}
+@keyframes puff3Rise {
+  0%   { transform: translate(8px, 262px) scale(0.3); opacity: 0.4; }
+  100% { transform: translate(-8px, 215px) scale(1.8); opacity: 0; }
 }
 
 .section-label {
@@ -863,7 +896,7 @@ body {
   #navbar { padding: 1rem 2rem; }
   #navbar.scrolled { padding: 0.8rem 2rem; }
   #about { grid-template-columns: 1fr; padding: 4rem 2rem; }
-  .about-scene { height: 250px; }
+  .about-scene { height: auto; }
   #contact { grid-template-columns: 1fr; }
   .contact-right { min-height: 350px; position: relative; }
   .footer-top { grid-template-columns: 1fr 1fr; }
